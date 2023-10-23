@@ -145,9 +145,9 @@ body {
 .top-row input {
   background-color: #FFA500; 
   color: lightyellow;
-  border: 1px solid lightyellow;
+  border: 2px solid lightyellow;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 50px;
   flex: 1;
   margin-right: 2px;
   max-width: 70%;
@@ -308,7 +308,7 @@ body {
 .contain img {
   position: relative;
   top: -5px;
-  width: 50px;
+  width: 90px;
 }
 
 .recipe {
@@ -346,4 +346,7 @@ body {
 .background-img{
   width: 100vw;
  
+}
+h6{
+  background-color: chartreuse;
 }
