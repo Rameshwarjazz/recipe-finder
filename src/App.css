@@ -1,38 +1,349 @@
-.App {
-  text-align: center;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: orange; 
+  width: 100vw;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
-  background-color: #282c34;
+  background-color: orange;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: lightyellow;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 4px;
 }
+
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.main-div {
+  background-color: orange !important;
+  padding-top: 20px;
+  text-align: center;
+  color: lightyellow;
+}
+
+.data-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 15vw;
+  background-color: transparent;
+  padding: 20px;
+  color: lightyellow;
+  align-content: flex-start;
+}
+
+.grid-item {
+  background-color: #FFA500;
+  color: lightyellow;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  flex: 0 0 calc(25% - 20px);
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.grid-item button {
+  background-color: orange; 
+  color: lightyellow;
+  border-radius: 5px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+}
+
+.popup-content {
+  background-color: orange;
+  display: flex;
+  color: lightyellow;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  max-width: 100%;
+  width: 90%;
+  height: 90%;
+  
+}
+
+.popup-content img {
+  width: 40%;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  color: lightyellow;
+}
+
+
+.filter {
+  background-color: #463a25;
+  padding-top: 20px;
+  color: lightyellow;
+  width: 100%;
+}
+
+.contain {
+  display: flex;
+  text-align: center;
+  width: 100vw;
+  justify-content: center;
+ 
+}
+
+.top-row input {
+  background-color: #FFA500; 
+  color: lightyellow;
+  border: 1px solid lightyellow;
+  padding: 10px;
+  border-radius: 5px;
+  flex: 1;
+  margin-right: 2px;
+  max-width: 70%;
+}
+
+.bottom-row {
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.bottom-row input[type="text"] {
+  background-color: #FFA500;
+  color: lightyellow;
+  border: 1px solid lightyellow;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.bottom-row button {
+  background-color: orange; 
+  color: lightyellow;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-right: 10px;
+}
+
+
+
+.contentss {
+  position: relative;
+  top: 10%;
+  right: -8%;
+}
+
+.bottom-fav button {
+  background-color: orange;
+  color: lightyellow;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  margin-right: 0%;
+}
+
+.heart-button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.heart-button.active {
+  color: red;
+}
+
+.heart-button.active {
+  font-size: 36px; 
+}
+.popup-fav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  overflow-y: scroll;
+}
+
+.pops {
+  position: absolute;
+  color: antiquewhite;
+  top: 2%;
+  margin-left: 40vw;
+  width: 20%;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .App-header {
+    font-size: 16px;
   }
-  to {
-    transform: rotate(360deg);
+  
+ 
+  .filter {
+    position: relative;
   }
+  .grid-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+  .popup-content {
+    width: 95%; 
+  }
+  .pops {
+    margin-left: 5vw;
+    width: 200px;
+  }
+  .pops img {
+    width: 200px; 
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .contain {
+    width: 200px;
+    display: flex;
+    position: relative;
+    left: 15vw;
+  }
+  .top-row {
+    width: 70px;
+    padding-bottom: 5px;
+  }
+  .bottom-row {
+    width: 60px;
+    position: relative;
+    left: 3vw;
+    padding-bottom: 5px;
+  }
+  .bottom-fav {
+    width: 70px;
+    position: relative;
+    left: 2vw;
+  }
+  .App-header {
+    font-size: 14px; 
+  }
+  .data-grid {
+    margin-left: 0vw;
+    position: relative;
+    top: -70px;
+    left: -5px;
+    width: 350px;
+  }
+  .grid-item img {
+    width: 150px; 
+  }
+}
+
+.contain {
+  position: relative;
+}
+
+.contain img {
+  position: relative;
+  top: -5px;
+  width: 50px;
+}
+
+.recipe {
+  color: antiquewhite;
+  text-align: center;
+}
+
+
+.app-name {
+  margin-top: -12.5px;
+  margin-left: 9px;
+}
+
+.itemss {
+  margin-bottom: 15px;
+}
+
+.itemss img {
+  border-radius: 10px;
+  border: 2px solid lightyellow;
+}
+
+.itemss button {
+  color: lightyellow;
+  background-color: red;
+  border-radius: 5px;
+  border: 1px solid lightyellow;
+}
+
+.itemss button:hover {
+  background-color: lightyellow;
+  color: red;
+}
+
+.background-img{
+  width: 100vw;
+ 
 }
